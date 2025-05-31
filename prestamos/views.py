@@ -1,7 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Prestamo, Cuota, Mora
+from .models import Prestamo, Cuota
 from .serializers import PrestamoSerializer
 from datetime import date
 from dateutil.relativedelta import relativedelta

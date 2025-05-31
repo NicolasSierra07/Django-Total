@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'usuarios',
     'prestamos',
     'ahorros',
+    'productos',
+    'vendedores',
+    'restaurantes',
+    'reservas',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +140,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
     ]
 }

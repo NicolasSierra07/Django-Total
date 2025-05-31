@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Prestamo, Cuota, Mora
+from .models import Prestamo, Cuota
 
 # Serializador para cuotas
 class CuotaSerializer(serializers.ModelSerializer):
@@ -7,13 +7,7 @@ class CuotaSerializer(serializers.ModelSerializer):
         model = Cuota
         fields = '__all__'
 
-# Serializador para moras
-class MoraSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mora
-        fields = '__all__'
-
-# Serializador para préstamos, incluye cuotas y moras
+# Serializador para préstamos, incluye cuotas
 class PrestamoSerializer(serializers.ModelSerializer):
     cuotas = CuotaSerializer(many=True, read_only=True)
 
